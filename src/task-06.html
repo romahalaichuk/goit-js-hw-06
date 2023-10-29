@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task 6</title>
-    <link rel="stylesheet" href="css/common.css" />
-    <style>
-      #validation-input {
-        border: 2px solid #bdbdbd;
-      }
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Task 6</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style>
+			#validation-input {
+				border: 2px solid #bdbdbd;
+				transition: all 0.3s ease;
+				animation: float 2s ease infinite;
+				box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+			}
 
-      #validation-input.valid {
-        border-color: #4caf50;
-      }
+			#validation-input.valid {
+				border-color: #4caf50;
+				transform: translateY(-5px);
+				animation: none;
+			}
 
-      #validation-input.invalid {
-        border-color: #f44336;
-      }
-    </style>
-  </head>
-  <body>
-    <p><a href="index.html">Go back</a></p>
+			#validation-input.invalid {
+				border-color: #f44336;
+				transform: translateY(-5px);
+				animation: none;
+				box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+			}
 
-    <input
-      type="text"
-      id="validation-input"
-      data-length="6"
-      placeholder="Please enter 6 symbols"
-    />
+			#validation-input:focus {
+				animation: none;
+			}
 
-    <script src="js/task-06.js" type="module"></script>
-  </body>
+			@keyframes float {
+				0% {
+					transform: translateY(-5px);
+				}
+				50% {
+					transform: translateY(5px);
+				}
+				100% {
+					transform: translateY(-5px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<p><a href="index.html">Go back</a></p>
+
+		<input
+			type="text"
+			id="validation-input"
+			data-length="6"
+			placeholder="Please enter 6 symbols" />
+
+		<script src="js/task-06.js" type="module"></script>
+	</body>
 </html>
